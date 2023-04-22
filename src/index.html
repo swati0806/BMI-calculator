@@ -1,1 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">About</h4>
+                        <p class="text-muted">Hey Folks! This BODY MASS INDEX calculator will give you an idea of how your weight
+                            compares to common
+                            values. Body Mass Index (or BMI) is calculated as your weight (in kilograms) divided by the
+                            square of your height (in metres) or BMI = Kg/M^2..</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contact</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.linkedin.com/in/swati-namdev-8424b61b7/" class="text-white">Follow
+                                    on Linkedin</a></li>
+                            <li><a href="https://www.instagram.com/swati__namdev/" class="text-white">Like on
+                                    Instagram</a></li>
+                            <li><a href="https://www.swati27namdev@gmail.com" class="text-white">Email me</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar navbar-dark bg-dark box-shadow">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <strong>BMI (Body Mass Index)</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+
+    </header>
+
+    <main role="main">
+        <section class="jumbotron text-center" style="margin-bottom: 0rem;">
+            <div class="container">
+                <h1 class="jumbotron-heading">BMI Calculator</h1>
+                <blockquote class="blockquote">
+                    <p class="lead text-muted">“To keep the body in good health is a duty…otherwise we shall not be able
+                        to keep the mind strong and clear.”</p>
+                    <footer class="blockquote-footer"><cite title="Source Title">Buddha</cite>
+                    </footer>
+                </blockquote>
+
+            </div>
+        </section>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card">
+                            <h5 class="card-header text-light bg-dark">Calculate BMI</h5>
+                            <div class="card-body">
+
+                                <div class="form-group">
+                                    <label>Height</label>
+                                    <input type="number" class="form-control" id="height"
+                                        placeholder="Enter your height">
+                                    <small class="form-text text-muted">Height in cm.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label>Weight</label>
+                                    <input type="number" class="form-control" id="weight"
+                                        placeholder="Enter your weight">
+                                    <small class="form-text text-muted">Weight in kg.</small>
+                                </div>
+
+                                <button type="submit" onclick="cal_BMI();" class="btn btn-secondry btn-block"
+                                    style="background-color: salmon; font: caption;">Calculate</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="card h-100 ">
+                            <h5 class="card-header text-light bg-dark">Results</h5>
+                            <div class="card-body text-center">
+                                <h4 class="font-weight-normal">Your BMI is</h4>
+                                <h1 id="R_BMI">
+                                    -
+                                </h1>
+                                <br>
+                                <p class="lead">AND</p>
+                                <p class="lead">You have a</p>
+                                <h4 id="R_detail">
+                                    -
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <hr class="featurette-divider"><br><br>
+                <div class="container content ">
+                    <h1 class="text-center" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><u>Body Mass Index
+                            (BMI)</u></h1>
+                    <p class="lead text-justify"><br>
+                    <p>The BMI is
+                        universally expressed in kg/m^2, resulting from mass in
+                        kilograms and height in
+                        metres.<br> If pounds and inches are used, a conversion factor of 703 (kg/m^2)/(lb/in^2) must be
+                        applied. When the
+                        term BMI is used informally, the units are usually omitted.<br>
+
+                        BMI provides a simple numeric measure of a person's thickness or thinness, allowing health
+                        professionals to discuss weight problems more objectively with their patients. BMI was designed
+                        to be used as a
+                        simple means of classifying average sedentary (physically inactive) populations, with an average
+                        body
+                        composition.<br>For such individuals, the value recommendations are as follows: a BMI from 18.5
+                        up
+                        to 25 kg/m^2 may
+                        indicate optimal weight, a BMI lower than 18.5 suggests the person is underweight, a number from
+                        25 up to 30 may indicate the person is overweight, and a number from 30 upwards suggests the
+                        person is
+                        obese.Lean male athletes often have a high muscle-to-fat ratio and therefore a BMI that is
+                        misleadingly
+                        high relative to their body-fat percentage.
+                    </p>
+                    </p>
+
+                    <br><br>
+                    <hr class="featurette-divider"><br><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="card h-100">
+                                    <div class="card-header text-center">
+                                        <span class="fa-stack fa-4x">
+                                            <i class="fa fa-circle fa-stack-2x" style="color: salmon;"></i>
+                                            <i class="fa fa-plus fa-stack-1x text-dark"></i>
+                                        </span>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">OVERWEIGHT</h5>
+                                        <p class="card-text text-justify">If your BMI is 25.0 to &lt; 30 or 169 lbs to
+                                            202 lbs, it falls within the overweight range.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card h-100">
+                                    <div class="card-header text-center">
+                                        <span class="fa-stack fa-4x">
+                                            <i class="fa fa-circle fa-stack-2x" style="color: salmon;"></i>
+                                            <i class="fa fa-heart fa-stack-1x text-dark"></i>
+                                        </span>
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">NORMAL WEIGHT</h5>
+                                        <p class="card-text text-justify">If your BMI is 18.5 to &lt; 25 or 125 lbs to
+                                            168 lbs, it falls within the normal range.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card h-100">
+                                    <div class="card-header text-center">
+                                        <span class="fa-stack fa-4x">
+                                            <i class="fa fa-circle fa-stack-2x" style="color: salmon;"></i>
+                                            <i class="fa fa-minus fa-stack-1x text-dark"></i>
+                                        </span>
+                                    </div>
+                                    <div class="card-body ">
+                                        <h5 class="card-title text-center">UNDERWEIGHT</h5>
+                                        <p class="card-text text-justify">If your BMI is less than 18.5 or 124 lbs or
+                                            less, it falls within the underweight range.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <h1 class="text-center" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><u>ABOUT OBESITY</u>
+                </h1>
+                <p class="lead text-justify"><br>
+                <p>Obesity is a
+                    condition
+                    that occurs when a person has excess weight or body fat that might affect their health. A doctor
+                    will usually suggest that a person has obesity if they have a high body mass index (BMI).<br>
+
+                    BMI is a tool that doctors use to assess whether or not a person has an appropriate weight for their
+                    age, sex, and height. It combines a person’s weight in kilograms divided by the square of their
+                    height in meters.<br>
+                    Having a BMI between 25 and 29.9 indicates that a person is carrying excess weight. A person has
+                    obesity if their BMI is 30 or over.<br>
+
+                    Certain other factors — such as a person’s waist-to-hip ratio, waist-to-height ratio, and amount and
+                    distribution of fat — also play a role in determining how healthy their weight is.
+                </p>
+                </p>
+                <br>
+                <br>
+                <h1 class="text-center" style="font-family: Verdana, Geneva, Tahoma, sans-serif;"><u>LIMITATIONS OF
+                        BMI</u>
+                </h1>
+                <p class="lead text-justify" style="font-family: Arial, Helvetica, sans-serif;"><br>
+                <p>Although BMI is a
+                    widely used and useful indicator of healthy body weight, it does have its limitations. BMI is only
+                    an estimate that cannot take body composition into account. Due to a wide variety of body types as
+                    well as distribution of muscle, bone mass, and fat, BMI should be considered along with other
+                    measurements rather than being used as the sole method for determining a person's healthy body
+                    weight.
+                </p>
+                <p>
+                    <b>In adults:</b>
+                </p>
+                <p>
+                    BMI cannot be fully accurate because it is a measure of excess body weight, rather than excess body
+                    fat. BMI is further influenced by factors such as age, sex, ethnicity, muscle mass, and body fat,
+                    and activity level, among others. For example, an older person who is considered a healthy weight,
+                    but is completely inactive in their daily life may have significant amounts of excess body fat even
+                    though they are not heavy. This would be considered unhealthy, while a younger person with higher
+                    muscle composition of the same BMI would be considered healthy. In athletes, particularly
+                    bodybuilders who would be considered overweight due to muscle being heavier than fat, it is entirely
+                    possible that they are actually at a healthy weight for their body composition. Generally, according
+                    to the CDC:
+                </p>
+                <ul>
+                    <li>
+
+                        Older adults tend to have more body fat than younger adults with the same BMI.
+
+
+                    </li>
+                    <li>
+
+                        Women tend to have more body fat than men for an equivalent BMI.
+
+                    </li>
+                </ul>
+                <p>
+                    <b>In children and adolescents:</b>
+                </p>
+                <p>
+                    The same factors that limit the efficacy of BMI for adults can also apply to children and
+                    adolescents. Additionally, height and level of sexual maturation can influence BMI and body fat
+                    among children. BMI is a better indicator of excess body fat for obese children than it is for
+                    overweight children, whose BMI could be a result of increased levels of either fat or fat-free mass
+                    (all body components except for fat, which includes water, organs, muscle, etc.). In thin children,
+                    the difference in BMI can also be due to fat-free mass.
+                </p>
+                </p>
+            </div>
+    </main>
+    <footer class="text-muted">
+        <div class="container">
+            <br><br>
+            <p class="float-right">
+                <a href="#">Back to top</a>
+            </p>
+            <p>Check your Body Mass Index, and stay healthy!</p>
+            <p>Don't know what is BMI? <a href="../../"></a>Visit the homepage</a> or read our <a href="#">guide about
+                    BMI</a>.</p>
+        </div>
+    </footer>
+    <script src="https://swati0806.github.io//BMI-calculator//bmi.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <div style="position: fixed;bottom: 15px;right: 15px;">
+        <button type="button" data-toggle="modal" data-target="#exampleModal"
+            class="btn border-0 btn-light btn-circle btn-xl"><i class="bi bi-plus"
+                style="font-size: 32px;"></i></button>
+    </div>
+</body>
+
+
+</html>
