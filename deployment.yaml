@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bmi-calculator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bmi-calculator
+  template:
+    metadata:
+      labels:
+        app: bmi-calculator
+    spec:
+      containers:
+      - name: bmi-calculator
+        image: bmifinal
+        ports:
+        - containerPort: 4040
